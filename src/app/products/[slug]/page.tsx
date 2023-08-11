@@ -7,6 +7,13 @@ type Props = {
     };
 };
 
+export function generateMetadata({ params }: Props) {
+    return {
+        title: `제품의 이름 : ${params.slug}`,
+        description: `${params.slug}바지 제품에 대한 설명을 확인할 수 있습니다.`,
+    };
+}
+
 export default function PantsPage({ params }: Props) {
     if (params.slug === 'nothing') {
         notFound();
