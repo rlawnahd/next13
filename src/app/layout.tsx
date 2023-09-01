@@ -2,7 +2,12 @@ import Link from 'next/link';
 import './globals.css';
 import styles from './layout.module.css';
 import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
+const font = Inter({
+    subsets: ['latin'],
+    weight: ['700'],
+});
 export const metadata: Metadata = {
     title: '멋진 제품 사이트',
     description: '멋진 제품을 소개하는 곳입니다.',
@@ -13,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
+        <html lang="en" className={font.className}>
             {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
